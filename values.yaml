@@ -1,0 +1,20 @@
+# ~/kub_lessons/helm_lessons$ cat my-cluster-config/my-wordpress/values.yaml
+
+mysql:
+  password: c2VyZ2V5Nzc3
+
+wordpress_app:
+  number_of_replicas: 1
+  storage: 5Gi
+  image: wordpress:6.2.1-apache
+  db_user: wordpress
+  port: 80
+  nodePort: 30081
+  service:
+    type: "ClusterIP"
+
+
+ingress:
+  enabled: false
+  host: "wpwp.prosperitydev.website"
+  port: 80
