@@ -1,0 +1,12 @@
+name: Deploy
+on: workflow_dispatch
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Files
+        uses: actions/checkout@v4
+      - name: Show files in the folder
+        run: |
+          ls -al
+          pwd
